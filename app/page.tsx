@@ -360,7 +360,7 @@ export default function DynamicPortfolio() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://github.com/syaharani21/e-catering"
+                href="https://github.com/Syaharani21/caterify"
                 className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-bold hover:bg-cyan-400 transition-colors"
               >
                 Inspect Source Code ➔
