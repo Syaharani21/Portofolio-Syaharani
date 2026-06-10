@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 
 export default function DynamicPortfolio() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -16,16 +17,16 @@ export default function DynamicPortfolio() {
   }, []);
 
   // Varian Animasi Framer Motion
-  const fadeIn = {
+  const fadeIn: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
     },
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -151,11 +152,12 @@ export default function DynamicPortfolio() {
             <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-fuchsia-500 rounded-full blur-[40px] opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
 
             <div className="relative w-full h-full rounded-full p-1 bg-gradient-to-tr from-cyan-500 to-fuchsia-500">
-              <div className="w-full h-full rounded-full overflow-hidden bg-[#111] border-4 border-[#050505]">
-                <img
+              <div className="relative w-full h-full rounded-full overflow-hidden bg-[#111] border-4 border-[#050505]">
+                <Image
                   src="/foto-profil.jpg"
                   alt="Syaharani Nurulita"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  fill
+                  className="object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
             </div>
@@ -391,7 +393,7 @@ export default function DynamicPortfolio() {
               "Git",
               "System Design",
               "Game Logic",
-            ].map((skill, i) => (
+            ].map((skill) => (
               <motion.span
                 key={skill}
                 variants={fadeIn}
