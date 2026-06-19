@@ -7,7 +7,7 @@
   --lime: #c8f542;
 }
 
-:root {
+@theme {
   --ink: #0a0a0f;
   --paper: #f7f5f0;
   --lime: #c8f542;
