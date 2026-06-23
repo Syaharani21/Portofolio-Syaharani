@@ -1,11 +1,15 @@
 export default function Footer() {
   return (
-    <footer className="max-w-[1100px] mx-auto px-10 py-[18px] border-t border-white/[0.06] flex justify-between items-center flex-wrap gap-2">
-      <div className="text-[0.67rem] text-white/14 tracking-[0.07em]">
-        Syaharani Nurulita · She/Her · Jakarta, ID · 2026
-      </div>
-      <div className="text-[0.67rem] text-white/10 tracking-[0.06em]">
-        Universitas Bina Sarana Informatika · TI · GPA 3.68
+    <footer className="border-t border-[var(--border)] px-11 py-5 flex justify-between items-center relative z-10">
+      <span className="font-serif-display italic text-[13px] text-[var(--muted)]">
+        Syaharani Nurulita
+      </span>
+      <div className="flex items-center text-[11px] text-[var(--muted)] font-medium tracking-wide">
+        Jakarta, ID
+        <span className="inline-block w-1 h-1 rounded-full bg-[var(--lime)] mx-[6px]" />
+        UBSI · TI
+        <span className="inline-block w-1 h-1 rounded-full bg-[var(--lime)] mx-[6px]" />
+        2026
       </div>
     </footer>
   );

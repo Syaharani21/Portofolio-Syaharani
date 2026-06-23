@@ -1,59 +1,56 @@
-import Nav from "@/components/Nav";
+import Navbar from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Ticker from "@/components/Ticker";
-import About from "@/components/About";
+import Marquee from "@/components/Marquee";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
-import Thesis from "@/components/Thesis";
-import GraphicDesign from '@/components/GraphicDesign';
-import TechStack from "@/components/TechStack";
-import Certifications from "@/components/Certifications";
+import GraphicDesign from "@/components/GraphicDesign";
+import Skills from "@/components/TechStack";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import { SectionLabel } from "@/components/About";
 
-const stats = [
-  { n: "3.68", sup: "/4", label: "Indeks Prestasi Kumulatif" },
-  { n: "7", sup: "+", label: "Lisensi & Sertifikasi" },
-  { n: "2", sup: "×", label: "Program MSIB / Internship" },
-  { n: "29", sup: "", label: "Skills Terverifikasi LinkedIn" },
-];
-
-function Stats() {
-  return (
-    <div className="cell flex flex-col justify-between">
-      <SectionLabel>Angka</SectionLabel>
-      {stats.map((s) => (
-        <div key={s.label} className="py-[18px] border-b border-white/[0.06] last:border-none">
-          <div className="font-syne font-extrabold text-[2.8rem] leading-none tracking-tighter text-paper">
-            {s.n}
-            <span className="text-lime text-[1.5rem]">{s.sup}</span>
-          </div>
-          <div className="text-[0.68rem] tracking-[0.1em] uppercase text-white/20 mt-1">{s.label}</div>
-        </div>
-      ))}
-    </div>
-  );
-}
+export const metadata = {
+  title: "Syaharani Nurulita — Portfolio",
+  description:
+    "Final-Year IT Student | Software Engineer | Game Developer | Ex-ItT Intern @ Kemenlu RI | MSIB Batch 7 Graduate",
+};
 
 export default function Home() {
   return (
-    <main className="min-h-screen" style={{ background: "var(--ink)", color: "var(--paper)", fontFamily: "'Space Grotesk', sans-serif" }}>
-      <Nav />
-      <Hero />
-      <Ticker />
-      <div className="bento-grid">
-        <About />
-        <Stats />
+    <main className="bg-[#07080f] text-[#eeeef8] font-syne overflow-x-hidden">
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div
+          className="absolute w-[500px] h-[500px] rounded-full top-[-150px] left-[-100px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(124,111,247,0.10) 0%, transparent 65%)",
+          }}
+        />
+        <div
+          className="absolute w-[400px] h-[400px] rounded-full top-[200px] right-[-80px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(200,240,96,0.06) 0%, transparent 65%)",
+          }}
+        />
+        <div
+          className="absolute w-[350px] h-[350px] rounded-full bottom-[200px] left-[20%]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(240,112,176,0.06) 0%, transparent 65%)",
+          }}
+        />
+      </div>
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <Marquee />
         <Experience />
         <Projects />
-        <Thesis />
-        <GraphicDesign/>
-        <TechStack />
-        <Certifications />
+        <GraphicDesign />
+        <Skills />
         <Contact />
+        <Footer />
       </div>
-      <Footer />
     </main>
   );
 }
