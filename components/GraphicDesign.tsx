@@ -15,7 +15,7 @@ const designProjects = [
     description:
       "Merancang aset visual profesional untuk presentasi, elemen antarmuka pengguna (UI), dan dokumentasi acara.",
     tools: "Canva",
-    image: "/images/VB Knowledge Sharing", // Sesuaikan nama gambar di folder public
+    image: "/images/VB Knowledge Sharing.png", // Sesuaikan nama gambar di folder public
   },
 ];
 
