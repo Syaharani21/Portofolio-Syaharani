@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Syaharani Nurulita — Portfolio",
   description:
-    "Final-Year IT Student | Software Engineer | Game Developer | Ex-ItT Intern @ Kemenlu RI | MSIB Batch 7 Graduate",
+    "Final-Year IT Student | Software Engineer | Game Developer | Ex-IT Intern @ Kemenlu RI | MSIB Batch 7 Graduate",
 };
 
 export default function Home() {

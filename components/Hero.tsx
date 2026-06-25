@@ -44,7 +44,7 @@ export default function Hero() {
   return (
     <section
       id="profil"
-      className="relative z-10 px-11 pt-[72px] pb-14 grid grid-cols-[1fr_300px] gap-12 items-start"
+      className="relative z-10 px-11 pt-[72px] pb-14 grid grid-cols-[1fr_300px] md:grid-cols-[1fr_300px] grid-cols-1 gap-12 items-start"
     >
       {/* Left */}
       <div>
@@ -133,22 +133,20 @@ export default function Hero() {
           {/* Shine */}
           <div className="absolute top-0 left-0 right-0 h-px shine-bar" />
 
-          {/* Avatar */}
+          {/* Avatar — FIX: parent harus relative+overflow-hidden, hapus teks "SN" */}
           <div
-            className="w-16 h-16 rounded-[14px] flex items-center justify-center mb-[14px] font-serif-display italic text-2xl text-white font-normal"
+            className="relative w-16 h-16 rounded-[14px] overflow-hidden mb-[14px]"
             style={{
               background:
                 "linear-gradient(135deg, var(--violet2), var(--violet))",
             }}
           >
-            <Image 
-              src="/foto-profil.jpg" 
-              alt="Foto Syaharani Nurulita" 
+            <Image
+              src="/foto-profil.jpg"
+              alt="Foto Syaharani Nurulita"
               fill
               className="object-cover"
             />
-            {/* Swap with <Image> if foto-profil.jpg is in /public */}
-            SN
           </div>
 
           <div className="text-base font-bold mb-[2px]">Syaharani Nurulita</div>

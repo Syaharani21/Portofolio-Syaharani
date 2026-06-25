@@ -10,6 +10,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // label = teks yang ditampilkan, href = section id yang dituju
+  const navLinks = [
+    { label: "Profil", href: "#profil" },
+    { label: "Karir", href: "#karir" },
+    { label: "Proyek", href: "#proyek" },
+    { label: "Desain", href: "#graphic-design" },
+    { label: "Kontak", href: "#contact" },
+  ];
+
   return (
     <nav
       className={`sticky top-0 z-50 flex justify-between items-center px-11 py-[22px] transition-all duration-300 ${
@@ -21,22 +30,33 @@ export default function Navbar() {
       {/* Logo */}
       <div className="flex items-center gap-[10px]">
         <div className="w-7 h-7 rounded-[6px] bg-[var(--violet)] flex items-center justify-center flex-shrink-0">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <polyline points="2,10 5,4 7,8 9,6 12,10" />
           </svg>
         </div>
-        <span className="text-sm font-bold tracking-wide">Syaharani Nurulita</span>
+        <span className="text-sm font-bold tracking-wide">
+          Syaharani Nurulita
+        </span>
       </div>
 
       {/* Nav links */}
       <div className="flex gap-1 bg-[var(--bg2)] border border-[var(--border)] rounded-3xl p-1">
-        {["Profil", "Karir", "Proyek", "Desain", "Kontak"].map((item) => (
+        {navLinks.map(({ label, href }) => (
           <a
-            key={item}
-            href={`#${item.toLowerCase()}`}
+            key={href}
+            href={href}
             className="text-xs text-[var(--muted)] no-underline px-[14px] py-[5px] rounded-[20px] tracking-wide transition-all duration-200 hover:text-[var(--text)] hover:bg-[rgba(124,111,247,0.15)]"
           >
-            {item}
+            {label}
           </a>
         ))}
       </div>

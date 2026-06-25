@@ -34,7 +34,10 @@ const projects = [
       "QA Testing",
       "2D Platformer",
     ],
-    link: { label: "Main gamenya ↗", href: "https://itch.io/embed/3117865" },
+    link: {
+      label: "Main gamenya ↗",
+      href: "https://greenhouse5.itch.io/verdant-chronicles",
+    },
     wide: false,
     thesis: false,
   },

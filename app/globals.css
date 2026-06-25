@@ -1,8 +1,28 @@
+@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --font-syne: "Syne", sans-serif;
+  --font-instrument: "Instrument Serif", serif;
+
+  --color-bg: #07080f;
+  --color-bg2: #0d0f1c;
+  --color-bg3: #12152a;
+  --color-violet: #7c6ff7;
+  --color-violet2: #5a54d4;
+  --color-lime: #c8f060;
+  --color-lime2: #a8d040;
+  --color-pink: #f070b0;
+  --color-amber: #f0a030;
+  --color-text: #eeeef8;
+  --color-muted: #6b7089;
+  --color-muted2: #9a9db8;
+
+  --animate-marquee: marquee 22s linear infinite;
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+  --animate-blink: blink 1.1s step-end infinite;
+  --animate-fade-up: fade-up 0.55s ease forwards;
+}
 
 :root {
   --bg: #07080f;
@@ -38,12 +58,8 @@ body {
 
 /* ── Marquee ── */
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 .animate-marquee {
   animation: marquee 22s linear infinite;
@@ -53,15 +69,8 @@ body {
 
 /* ── Pulse dot ── */
 @keyframes pulse-dot {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.45;
-    transform: scale(0.8);
-  }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.45; transform: scale(0.8); }
 }
 .animate-pulse-dot {
   animation: pulse-dot 2s ease-in-out infinite;
@@ -69,28 +78,17 @@ body {
 
 /* ── Blink cursor ── */
 @keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 .animate-blink {
   animation: blink 1.1s step-end infinite;
 }
 
-/* ── Fade-up on scroll ── */
+/* ── Fade-up ── */
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 .animate-fade-up {
   animation: fade-up 0.55s ease forwards;
@@ -103,13 +101,14 @@ body {
 
 /* ── Card hover ── */
 .card-hover {
-  transition:
-    border-color 0.25s,
-    transform 0.2s;
+  transition: border-color 0.25s, transform 0.2s;
 }
 .card-hover:hover {
   border-color: rgba(124, 111, 247, 0.4) !important;
   transform: translateY(-3px);
+}
+.card-hover-pink {
+  transition: border-color 0.25s, transform 0.2s;
 }
 .card-hover-pink:hover {
   border-color: rgba(240, 112, 176, 0.4) !important;
@@ -118,25 +117,11 @@ body {
 
 /* ── Shine bar ── */
 .shine-bar {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(124, 111, 247, 0.5),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(124, 111, 247, 0.5), transparent);
 }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg2);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(124, 111, 247, 0.3);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(124, 111, 247, 0.5);
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: rgba(124, 111, 247, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(124, 111, 247, 0.5); }
