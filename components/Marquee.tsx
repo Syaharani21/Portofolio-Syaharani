@@ -19,14 +19,14 @@ export default function Marquee() {
   const doubled = [...skills, ...skills];
 
   return (
-    <div className="border-y border-[var(--border)] bg-[var(--bg2)] py-3 overflow-hidden">
+    <div className="border-y border-[var(--line-soft)] bg-[var(--ink2)] py-3 overflow-hidden">
       <div className="animate-marquee">
         {doubled.map((skill, i) => (
           <span
             key={i}
-            className="inline-flex items-center gap-[10px] px-7 text-xs text-[var(--muted2)] font-medium tracking-wide"
+            className="inline-flex items-center gap-[10px] px-7 font-mono text-[11px] text-[var(--mute)] tracking-wide"
           >
-            <span className="w-1 h-1 rounded-full bg-[var(--violet)] flex-shrink-0" />
+            <span className="w-1 h-1 rounded-full bg-[var(--blue)] flex-shrink-0" />
             {skill}
           </span>
         ))}

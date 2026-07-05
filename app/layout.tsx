@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Syaharani Nurulita — Portfolio",
   description:
-    "Final-Year IT Student | Software Engineer | Ex-IT Intern @ Kemenlu RI | MSIB Batch 7 Graduate",
+    "Final-year IT student dengan trifecta IT governance, game programming, dan full-stack web development. Ex-IT Intern @ Kemenlu RI, MSIB Batch 7 Graduate.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,9 +1,9 @@
 import Navbar from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
+import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
-import GraphicDesign from "@/components/GraphicDesign";
 import Skills from "@/components/TechStack";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -16,37 +16,21 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="bg-[#07080f] text-[#eeeef8] font-syne overflow-x-hidden">
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div
-          className="absolute w-[500px] h-[500px] rounded-full top-[-150px] left-[-100px]"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(124,111,247,0.10) 0%, transparent 65%)",
-          }}
-        />
-        <div
-          className="absolute w-[400px] h-[400px] rounded-full top-[200px] right-[-80px]"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(200,240,96,0.06) 0%, transparent 65%)",
-          }}
-        />
-        <div
-          className="absolute w-[350px] h-[350px] rounded-full bottom-[200px] left-[20%]"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(240,112,176,0.06) 0%, transparent 65%)",
-          }}
-        />
+    <main className="bg-[var(--ink)] text-[var(--paper)] font-inter overflow-x-hidden">
+      {/* Corner registration marks — blueprint dossier detail */}
+      <div className="fixed inset-4 pointer-events-none z-0 hidden md:block">
+        <div className="absolute top-0 left-0 w-3 h-3 border-l border-t border-[var(--line)]" />
+        <div className="absolute top-0 right-0 w-3 h-3 border-r border-t border-[var(--line)]" />
+        <div className="absolute bottom-0 left-0 w-3 h-3 border-l border-b border-[var(--line)]" />
+        <div className="absolute bottom-0 right-0 w-3 h-3 border-r border-b border-[var(--line)]" />
       </div>
       <div className="relative z-10">
         <Navbar />
         <Hero />
         <Marquee />
+        <About />
         <Experience />
         <Projects />
-        <GraphicDesign />
         <Skills />
         <Contact />
         <Footer />

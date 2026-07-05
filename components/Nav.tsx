@@ -10,51 +10,43 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // label = teks yang ditampilkan, href = section id yang dituju
   const navLinks = [
-    { label: "Profil", href: "#profil" },
+    { label: "Profil", href: "#about" },
     { label: "Karir", href: "#karir" },
     { label: "Proyek", href: "#proyek" },
-    { label: "Desain", href: "#graphic-design" },
     { label: "Kontak", href: "#contact" },
   ];
 
   return (
     <nav
-      className={`sticky top-0 z-50 flex justify-between items-center px-11 py-[22px] transition-all duration-300 ${
+      className={`sticky top-0 z-50 flex justify-between items-center px-6 md:px-11 py-4 transition-all duration-300 ${
         scrolled
-          ? "bg-[#07080f]/90 backdrop-blur-md border-b border-[var(--border)]"
-          : "border-b border-[var(--border)]"
+          ? "bg-[var(--ink)]/92 backdrop-blur-md border-b border-[var(--line)]"
+          : "border-b border-[var(--line-soft)]"
       }`}
     >
       {/* Logo */}
       <div className="flex items-center gap-[10px]">
-        <div className="w-7 h-7 rounded-[6px] bg-[var(--violet)] flex items-center justify-center flex-shrink-0">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="2,10 5,4 7,8 9,6 12,10" />
+        <div className="w-7 h-7 rounded-[3px] bg-[var(--blue)] flex items-center justify-center flex-shrink-0">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="3" cy="3" r="1.6" fill="#0a1420" />
+            <circle cx="11" cy="3" r="1.6" fill="#0a1420" />
+            <circle cx="7" cy="11" r="1.6" fill="#0a1420" />
+            <path d="M3 3L7 11L11 3" stroke="#0a1420" strokeWidth="1.3" strokeLinecap="round" />
           </svg>
         </div>
-        <span className="text-sm font-bold tracking-wide">
-          Syaharani Nurulita
+        <span className="font-mono text-xs font-medium tracking-wide hidden sm:inline">
+          syaharani<span className="text-[var(--blue)]">.dev</span>
         </span>
       </div>
 
       {/* Nav links */}
-      <div className="flex gap-1 bg-[var(--bg2)] border border-[var(--border)] rounded-3xl p-1">
+      <div className="hidden md:flex gap-1 bg-[var(--ink2)] border border-[var(--line)] rounded-[4px] p-1">
         {navLinks.map(({ label, href }) => (
           <a
             key={href}
             href={href}
-            className="text-xs text-[var(--muted)] no-underline px-[14px] py-[5px] rounded-[20px] tracking-wide transition-all duration-200 hover:text-[var(--text)] hover:bg-[rgba(124,111,247,0.15)]"
+            className="font-mono text-[11px] text-[var(--mute)] no-underline px-[14px] py-[6px] rounded-[2px] tracking-wide transition-all duration-200 hover:text-[var(--paper)] hover:bg-[rgba(79,163,227,0.12)]"
           >
             {label}
           </a>
@@ -62,8 +54,9 @@ export default function Navbar() {
       </div>
 
       {/* Badge */}
-      <div className="bg-[var(--lime)] text-[#0a0a00] text-[11px] font-bold px-3 py-[5px] rounded-[20px] tracking-wide">
-        Open to work
+      <div className="flex items-center gap-[6px] bg-[rgba(255,122,51,0.1)] border border-[rgba(255,122,51,0.35)] text-[var(--signal)] font-mono text-[10px] font-medium px-[10px] py-[6px] rounded-[3px] tracking-wide">
+        <span className="w-[5px] h-[5px] rounded-full bg-[var(--signal)] animate-pulse-dot" />
+        OPEN TO WORK
       </div>
     </nav>
   );

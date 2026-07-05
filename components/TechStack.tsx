@@ -1,5 +1,3 @@
-import { SectionLabel } from "./About";
-
 const stack = [
   { name: "PHP (Laravel)", core: true },
   { name: "JavaScript ES6+", core: true },
@@ -22,22 +20,35 @@ const stack = [
 
 export default function TechStack() {
   return (
-    <div className="cell col-span-full" id="skills">
-      <SectionLabel>Tech Stack · 29 skills</SectionLabel>
+    <section
+      className="relative z-10 px-6 md:px-11 py-16 section-divider"
+      id="skills"
+    >
+      <div className="flex items-center gap-[10px] mb-[10px] font-mono">
+        <span className="text-[11px] text-[var(--mute)]">FIG.04</span>
+        <div className="h-px w-10 bg-[var(--line)]" />
+        <span className="text-[11px] text-[var(--blue)] tracking-[1.5px] uppercase">
+          Tech Stack
+        </span>
+      </div>
+      <h2 className="font-grotesk text-[36px] md:text-[42px] tracking-[-0.5px] font-semibold leading-none mb-9 text-[var(--paper)]">
+        Skills
+      </h2>
+
       <div className="flex flex-wrap gap-2">
         {stack.map((t) => (
           <span
             key={t.name}
-            className={`text-[0.77rem] px-4 py-2 border rounded-[3px] tracking-[0.02em] transition-all cursor-default hover:border-lime/30 hover:text-lime/85 ${
+            className={`font-mono text-[12px] px-4 py-2 border rounded-[3px] tracking-wide transition-all cursor-default ${
               t.core
-                ? "border-lime/18 text-lime/72"
-                : "border-white/7 text-white/42"
+                ? "border-[rgba(255,122,51,0.3)] text-[var(--signal)] hover:bg-[rgba(255,122,51,0.08)]"
+                : "border-[var(--line)] text-[var(--mute)] hover:border-[var(--blue)] hover:text-[var(--paper)]"
             }`}
           >
             {t.name}
           </span>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
